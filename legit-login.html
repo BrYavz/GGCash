@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GCash Login - Legitimate</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f4f9ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .url-bar {
+      width: 100%;
+      max-width: 400px;
+      background-color: #e8f5e9;
+      padding: 6px 12px;
+      font-size: 13px;
+      color: green;
+      text-align: left;
+    }
+
+    .url-bar:before {
+      content: '🔒';
+      margin-right: 4px;
+    }
+
+    .header {
+      background-color: #0070ba;
+      color: white;
+      padding: 16px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .container {
+      background-color: white;
+      width: 100%;
+      max-width: 400px;
+      margin-top: 30px;
+      padding: 24px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border-radius: 12px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      width: 120px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      background-color: #0070ba;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .login-btn:hover {
+      background-color: #005a94;
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #777;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Simulated secure URL bar -->
+  <div class="url-bar">
+    https://www.gcash.com/login
+  </div>
+
+  <div class="header">
+    <h2>GCash</h2>
+  </div>
+
+  <div class="container">
+    <div class="logo">
+      <img src="logo.png" alt="GCash Logo" />
+    </div>
+    
+    <div class="form-group">
+      <label for="mobile">Mobile Number or Email</label>
+      <input type="text" id="mobile" placeholder="e.g. 0917XXXXXXX or email@example.com" />
+    </div>
+
+    <div class="form-group">
+      <label for="mpin">6-Digit MPIN</label>
+      <input type="password" id="mpin" maxlength="6" placeholder="••••••" />
+    </div>
+
+    <button class="login-btn">Login</button>
+
+    <p class="footer-note">This is a clean, secure login experience with verified branding and secure domain.</p>
+  </div>
+
+</body>
+</html>
