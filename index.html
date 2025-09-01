@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fake GCash Login - Educational Demo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f3f3f3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .app-header {
+      background-color: #0070ba;
+      color: white;
+      padding: 16px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .container {
+      background-color: white;
+      width: 100%;
+      max-width: 400px;
+      margin-top: 30px;
+      padding: 24px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      width: 100px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      background-color: #0070ba;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .login-btn:hover {
+      background-color: #005a94;
+    }
+
+    .warning-text {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #999;
+      text-align: center;
+    }
+
+    .fake-url-bar {
+      width: 100%;
+      max-width: 400px;
+      background-color: #eee;
+      padding: 6px 12px;
+      font-size: 13px;
+      color: red;
+      text-align: left;
+    }
+
+    .fake-url-bar:before {
+      content: '🔓';
+      margin-right: 4px;
+    }
+
+    .educational-note {
+      margin-top: 30px;
+      max-width: 400px;
+      font-size: 14px;
+      color: #666;
+      background: #fffbe6;
+      padding: 12px;
+      border-left: 4px solid #ffc107;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Simulated URL Bar -->
+  <div class="fake-url-bar">
+    http://gcash-login-official.security-alerts.com
+  </div>
+
+  <!-- App Header -->
+  <div class="app-header">
+    <h2>GCaash</h2>
+  </div>
+
+  <!-- Login Container -->
+  <div class="container">
+    <div class="logo">
+      <img src="logo.png" alt="Fake GCash Logo" />
+    </div>
+    
+    <div class="form-group">
+      <label for="mobile">Mobile Number or Email</label>
+      <input type="text" id="mobile" placeholder="e.g. 0917XXXXXXX or email@example.com" />
+    </div>
+
+    <div class="form-group">
+      <label for="mpin">6-Digit MPIN</label>
+      <input type="password" id="mpin" maxlength="6" placeholder="••••••" />
+    </div>
+
+    <button class="login-btn" onclick="handleLogin()">Login</button>
+
+    <p class="warning-text">This is a simulation. Do not enter real credentials.</p>
+  </div>
+
+  <!-- Educational Note -->
+  <div class="educational-note">
+    ⚠️ <strong>Phishing Red Flags:</strong>
+    <ul>
+      <li>Suspicious URL (not gcash.com)</li>
+      <li>Fake lock icon / HTTP instead of HTTPS</li>
+      <li>Typos in brand name: “GCaash”</li>
+      <li>Unprofessional design or logos</li>
+    </ul>
+    <p>This demo is for cybersecurity awareness training only.</p>
+  </div>
+
+  <script>
+    function handleLogin() {
+      alert("🚨 This is a phishing simulation.\n\nNever enter real credentials on suspicious websites.\n\nThis is for educational use only.");
+    }
+  </script>
+
+</body>
+</html>
