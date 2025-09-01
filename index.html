@@ -14,6 +14,35 @@
       align-items: center;
     }
 
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: help;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 180px;
+      background-color: #333;
+      color: #fff;
+      text-align: left;
+      padding: 8px;
+      border-radius: 6px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%; 
+      left: 50%;
+      margin-left: -90px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 13px;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
     .app-header {
       background-color: #0070ba;
       color: white;
@@ -106,24 +135,70 @@
       border-left: 4px solid #ffc107;
       border-radius: 6px;
     }
+
+    /* Modal Styles */
+    .modal {
+      display: none; 
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 24px;
+      border: 1px solid #888;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: -10px;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .modal p {
+      font-size: 16px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Simulated URL Bar -->
-  <div class="fake-url-bar">
+  <!-- Fake URL Bar with Tooltip -->
+  <div class="fake-url-bar tooltip">
     http://gcash-login-official.security-alerts.com
+    <span class="tooltiptext">This URL is suspicious: not the official domain.</span>
   </div>
 
-  <!-- App Header -->
-  <div class="app-header">
+  <!-- App Header with Tooltip on misspelling -->
+  <div class="app-header tooltip">
     <h2>GCaash</h2>
+    <span class="tooltiptext">Look closely: the brand name is misspelled.</span>
   </div>
 
   <!-- Login Container -->
   <div class="container">
-    <div class="logo">
-      <img src="logo.png" alt="Fake GCash Logo" />
+    <div class="logo tooltip">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Gcash_logo.svg" alt="Fake GCash Logo" />
+      <span class="tooltiptext">Fake or copied logo used by phishing sites.</span>
     </div>
     
     <div class="form-group">
@@ -136,7 +211,7 @@
       <input type="password" id="mpin" maxlength="6" placeholder="••••••" />
     </div>
 
-    <button class="login-btn" onclick="handleLogin()">Login</button>
+    <button class="login-btn" onclick="openModal()">Login</button>
 
     <p class="warning-text">This is a simulation. Do not enter real credentials.</p>
   </div>
@@ -146,16 +221,37 @@
     ⚠️ <strong>Phishing Red Flags:</strong>
     <ul>
       <li>Suspicious URL (not gcash.com)</li>
-      <li>Fake lock icon / HTTP instead of HTTPS</li>
+      <li>Fake HTTPS padlock</li>
       <li>Typos in brand name: “GCaash”</li>
-      <li>Unprofessional design or logos</li>
+      <li>Copied or low-quality logos</li>
     </ul>
     <p>This demo is for cybersecurity awareness training only.</p>
   </div>
 
+  <!-- Modal -->
+  <div id="phishingModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3>🚨 Phishing Simulation</h3>
+      <p>This is a fake login page created for training purposes only.</p>
+      <p>Never enter your real credentials on suspicious or unofficial websites.</p>
+    </div>
+  </div>
+
   <script>
-    function handleLogin() {
-      alert("🚨 This is a phishing simulation.\n\nNever enter real credentials on suspicious websites.\n\nThis is for educational use only.");
+    function openModal() {
+      document.getElementById('phishingModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('phishingModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('phishingModal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
     }
   </script>
 
